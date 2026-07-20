@@ -1,0 +1,56 @@
+h1{
+    text-align:center;
+}
+
+#first-div{
+    height:300px;
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+img{
+    height:100%;
+    width:20%;
+    border-radius: 10px;
+}
+#intro{
+    width:50%;
+}
+
+#second-div{
+    margin-top:10px;
+    display:flex;
+    justify-content:space-around;
+}
+
+.card{
+    height:250px;
+    width:350px;
+    border:1px solid black;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+}
+.card-1{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+.card-2{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+.card-3{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+footer{
+    margin-top:50px;
+    text-align: center;
+}

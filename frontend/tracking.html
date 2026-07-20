@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+       h1{
+        text-align: center;
+       }
+
+        #parent-div{
+            display:flex;
+            height:600px;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 120px;
+            gap:40px
+            
+        }
+    </style>
+</head>
+<body>
+
+    <h1>The Tracker</h1>
+    
+    <div id="parent-div">
+        <div>
+            <label for="">Morning</label>
+            <input type="radio" name="morning" value="1">1H 
+            <input type="radio" name="morning" value="2">2H
+            <input type="radio" name="morning" value="3">3H
+            <input type="radio" name="morning" value="4">4H
+            <input type="radio" name="morning" value="5">5H
+        </div>
+        <div>
+            <label for="">Afternoon</label>
+            <input type="radio" name="afternoon" value="1">1H 
+            <input type="radio" name="afternoon" value="2">2H
+            <input type="radio" name="afternoon" value="3">3H
+            <input type="radio" name="afternoon" value="4">4H
+            <input type="radio" name="afternoon" value="5">5H
+        </div>
+        <div>
+            <label for="">Night</label>
+            <input type="radio" name="night" value="1">1H 
+            <input type="radio" name="night" value="2">2H
+            <input type="radio" name="night" value="3">3H
+            <input type="radio" name="night" value="4">4H
+            <input type="radio" name="night" value="5">5H
+        </div>
+        <div>
+            <button id="trac-save">Save</button>
+        </div>
+    </div>
+
+    <script>
+        const trac_save=document.querySelector("#trac-save");
+
+        trac_save.addEventListener("click",()=>{
+
+            const morningHour=document.querySelector("input[name='morning']:checked");
+            const afternoonHour=document.querySelector("input[name='afternoon']:checked");
+            const nightHour=document.querySelector("input[name='night']:checked");
+            
+
+            if(!morningHour || !afternoonHour || !nightHour){
+                console.log("Please select all feild");
+                return;
+            }
+
+            const valueOfMorning=Number(morningHour.value);
+            const valueOfAfternoon=Number(afternoonHour.value);
+            const valueOfNight=Number(nightHour.value);
+            const totalValue=(valueOfMorning+valueOfAfternoon+valueOfNight);
+
+
+            const routine={
+            morning:valueOfMorning,
+            afternoon:valueOfAfternoon,
+            night:valueOfNight,
+            total:totalValue
+           };
+
+           fetch("http://localhost:5000/api/routines",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(routine)
+
+           })
+           .then(res => res.json())
+           .then (data =>{
+            console.log(data);
+            alert("Routine Saved Successfully");
+           })
+           .catch(error=>{
+            console.log(error);
+           })
+       
+
+
+
+        });
+
+     
+
+    </script>
+</body>
+</html>
