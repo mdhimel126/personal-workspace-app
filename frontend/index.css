@@ -13,6 +13,40 @@ a{
     color:rgb(167, 163, 163);
 }
 
+#message-icon{
+    height:45px;
+    position:fixed;
+    bottom:58px;
+    right:40px;
+    box-shadow: 5px 5px 15px rgba(176, 143, 143, 0.3);
+    transition:transform 0.5s ease
+}
+#message-icon:hover{
+    transform:scale(1.1)
+}
+@media(min-width:600px){
+    #message-icon{
+    height:60px;
+    position:fixed;
+    top:860px;
+    right:65px;
+    box-shadow: 5px 5px 15px rgba(176, 143, 143, 0.3);
+    transition:transform 0.5s ease
+}
+}
+
+@media(min-width:1024px){
+    #message-icon{
+    height:50px;
+    position:fixed;
+    top:480px;
+    right:65px;
+    box-shadow: 5px 5px 15px rgba(176, 143, 143, 0.3);
+    transition:transform 0.5s ease;
+}
+}
+
+
 #img-container{
     margin-top: 40px;
     margin-bottom: 30px;
@@ -74,7 +108,7 @@ img{
 #second-div{
     margin-top:80px;
     display:flex;
-    justify-content:space-around;
+    justify-content:space-evenly;
     flex-wrap:wrap;
 }
 
@@ -140,7 +174,6 @@ img{
     padding: 8px 24px;
     color:white;
     background: linear-gradient(135deg, #4344a1, #8b5cf6);
-    /* box-shadow: 0 4px 15px rgba(110, 112, 210, 0.4); */
     border:none;
     border-radius:6px
 }
