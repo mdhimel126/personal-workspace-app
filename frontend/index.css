@@ -13,39 +13,6 @@ a{
     color:rgb(167, 163, 163);
 }
 
-#message-icon{
-    height:45px;
-    position:fixed;
-    bottom:58px;
-    right:40px;
-    box-shadow: 5px 5px 15px rgba(176, 143, 143, 0.3);
-    transition:transform 0.5s ease
-}
-#message-icon:hover{
-    transform:scale(1.1)
-}
-@media(min-width:600px){
-    #message-icon{
-    height:60px;
-    position:fixed;
-    top:860px;
-    right:65px;
-    box-shadow: 5px 5px 15px rgba(176, 143, 143, 0.3);
-    transition:transform 0.5s ease
-}
-}
-
-@media(min-width:1024px){
-    #message-icon{
-    height:50px;
-    position:fixed;
-    top:480px;
-    right:65px;
-    box-shadow: 5px 5px 15px rgba(176, 143, 143, 0.3);
-    transition:transform 0.5s ease;
-}
-}
-
 
 #img-container{
     margin-top: 40px;
@@ -170,6 +137,7 @@ img{
     letter-spacing: 1.5px;
 }
 
+
 .btn{
     padding: 8px 24px;
     color:white;
@@ -182,6 +150,89 @@ img{
     box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
 }
 
+#message-icon{
+    height:45px;
+    position:fixed;
+    bottom:58px;
+    right:40px;
+    box-shadow: 5px 5px 15px rgba(176, 143, 143, 0.3);
+    transition:transform 0.5s ease
+}
+#message-icon:hover{
+    transform:scale(1.1)
+}
+
+
+.contact-menu{
+    position:fixed;
+    right:92px;
+    bottom:56px;
+}
+.item{
+    display:none;
+    /* margin-bottom:10px; */
+    font-size:24px;
+    
+}
+.i1{
+    position:fixed;
+    right:98px;
+    bottom:112px;
+}
+.i2{
+    position:fixed;
+    right:108px;
+    bottom:72px;
+}
+.i3{
+    position:fixed;
+    right:100px;
+    bottom:30px;
+}
+.contact-menu.active .item{
+    display:block;
+}
+
+
+
+@media(min-width:600px){
+    #message-icon{
+    height:60px;
+    position:fixed;
+    top:860px;
+    right:65px;
+    box-shadow: 5px 5px 15px rgba(176, 143, 143, 0.3);
+    transition:transform 0.5s ease
+}
+
+}
+
+@media(min-width:1024px){
+    #message-icon{
+    height:50px;
+    position:fixed;
+    top:480px;
+    right:65px;
+    box-shadow: 5px 5px 15px rgba(176, 143, 143, 0.3);
+    transition:transform 0.5s ease;
+}
+
+.i1{
+    position:fixed;
+    right:118px;
+    bottom:112px;
+}
+.i2{
+    position:fixed;
+    right:128px;
+    bottom:72px;
+}
+.i3{
+    position:fixed;
+    right:120px;
+    bottom:30px;
+}
+}
 
 footer{
     margin-top:80px;
