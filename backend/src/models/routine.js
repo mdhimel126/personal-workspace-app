@@ -2,6 +2,9 @@ import mongoose from "mongoose";
 
 const RoutineSchema= new mongoose.Schema(
     {
+        date:{
+            type:String
+        },
         morning:{
             type:Number
         },

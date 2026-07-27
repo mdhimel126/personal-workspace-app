@@ -19,6 +19,9 @@
             text-align: center;
             color:blueviolet
         }
+        #date{
+            color:black;
+        }
         label{
             display:block;
             margin-bottom: 15px;
@@ -101,6 +104,9 @@
             <input type="radio" name="night" value="5">5H
         </div>
         <div>
+            <input id="date" type="date">
+        </div>
+        <div>
             <button id="trac-save">Save</button>
         </div>
     </div>
@@ -113,6 +119,9 @@
             const morningHour=document.querySelector("input[name='morning']:checked");
             const afternoonHour=document.querySelector("input[name='afternoon']:checked");
             const nightHour=document.querySelector("input[name='night']:checked");
+
+            const dateInput=document.querySelector("#date");
+            const currentDate=dateInput.value;
             
 
             if(!morningHour || !afternoonHour || !nightHour){
@@ -127,13 +136,15 @@
 
 
             const routine={
+            date:currentDate,    
             morning:valueOfMorning,
             afternoon:valueOfAfternoon,
             night:valueOfNight,
             total:totalValue
            };
 
-            fetch("https://personal-workspace-app-1.onrender.com/api/routines", {            method:"POST",
+            fetch("https://personal-workspace-app-1.onrender.com/api/routines", {           
+            method:"POST",
             headers:{
                 "Content-Type":"application/json"
             },
