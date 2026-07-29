@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          *{
+            color:white;
+        }
+       h1{
+        text-align:center;
+        color:blueviolet
+         }
+        body {
+            background-color: #0b0f17;
+            background-image: 
+            radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+            radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
+            min-height:100vh;
+        }
+        #img-container{
+            margin-top: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        img{
+            height:200px;
+            width:auto;
+            border-radius:20px;
+
+        }
+        #intro{
+            width:70%;
+            font-family:sans-serif;
+            color:rgb(193, 193, 174);
+            margin:10px auto;
+        }
+
+
+        @media(min-width:600px){
+        
+            #first-div{
+                display:flex;
+                width:100%;
+                align-items: center;
+                justify-content:space-evenly;
+            }
+            #img-container{
+                width:30%;
+            }
+
+            #intro{
+                width:30%;
+                margin:0;
+            }
+
+        }
+
+
+        @media(min-width:1024px){
+
+        #first-div{
+            margin-top: 40px;
+            display:flex;
+
+        }
+        #img-container{
+            width:50%;
+        }
+         img{
+            height:280px;
+            width:auto;
+            border-radius:20px;
+
+        }
+        #intro{
+            width:50%;
+        }
+        }
+            #btn{
+            text-align:end;
+            
+        }
+          #back-btn{
+            padding: 8px 24px;
+            color:white;
+            background: linear-gradient(135deg, #4344a1, #8b5cf6);
+            border:none;
+            border-radius:6px
+        }
+        #back-btn:hover{
+    
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+         }
+        footer{
+            margin-top:80px;
+            text-align: center;
+            color:#fff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>About Me</h1>
+
+    <div id="btn">
+        <a href="index.html" ><button id="back-btn">Back</button></a>
+    </div>
+
+
+    <!-- first div -->
+    <div id="first-div">
+
+        <div id="img-container">
+        <img src="me.jpg" alt="">
+        </div>
+        <div id="intro">
+        <p>Hello, I'm Alamin Himel. a Computer Science student at Green University of Bangladesh. I enjoy building responsive websites and learning modern web technologies </p>
+        </div>
+
+    </div>
+
+   
+    <footer>
+        <h3>Thank Your for visiting my page</h3>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -5,8 +5,6 @@ import {connectionDB} from "./config/db.js";
 
 const PORT=process.env.PORT || 5000;
 
-console.log(process.env.MONGODB_URL);
-
 connectionDB();
 
 app.listen(PORT,()=>{

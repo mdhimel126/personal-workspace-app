@@ -5,6 +5,9 @@ const RoutineSchema= new mongoose.Schema(
         date:{
             type:String
         },
+        remark:{
+            type:String
+        },
         morning:{
             type:Number
         },

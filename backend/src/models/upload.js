@@ -4,23 +4,32 @@ const uploadSchema=new mongoose.Schema(
     {
         originalName:{
             type:String,
-            required:true
+            default:null
         },
         fileName:{
             type:String,
-            required:true
+            default:null
         },
         fileUrl:{
             type:String,
-            required:true
+            default:null
         },
         fileType:{
             type:String,
-            required:true
+            default:null
         },
         fileSize:{
             type:Number,
-            required:true
+            default:null
+        },
+        text:{
+            type:String,
+            default:null
+        },
+        category:{
+            type:String,
+            enum:["file","text","both"],
+            default:"file"
         }
     },
     {

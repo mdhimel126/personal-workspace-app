@@ -14,14 +14,16 @@
             background-image: 
             radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
             radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
+            min-height: 100vh;
         }
        h1{
             text-align: center;
             color:blueviolet
         }
-        #date{
+        #date,#remark{
             color:black;
         }
+       
         label{
             display:block;
             margin-bottom: 15px;
@@ -104,7 +106,12 @@
             <input type="radio" name="night" value="5">5H
         </div>
         <div>
+            <span>Date:</span> 
             <input id="date" type="date">
+        </div>
+        <div>
+            <span>Remark</span>
+            <input id="remark" type="text"> 
         </div>
         <div>
             <button id="trac-save">Save</button>
@@ -122,10 +129,13 @@
 
             const dateInput=document.querySelector("#date");
             const currentDate=dateInput.value;
+
+            const remarkInput=document.querySelector("#remark");
+            const remark=remarkInput.value;
             
 
-            if(!morningHour || !afternoonHour || !nightHour){
-                console.log("Please select all feild");
+            if(!morningHour || !afternoonHour || !nightHour || !currentDate){
+                alery("Please select all feild");
                 return;
             }
 
@@ -136,7 +146,8 @@
 
 
             const routine={
-            date:currentDate,    
+            date:currentDate,  
+            remark:remark,  
             morning:valueOfMorning,
             afternoon:valueOfAfternoon,
             night:valueOfNight,
