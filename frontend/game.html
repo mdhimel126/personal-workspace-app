@@ -118,10 +118,15 @@
         
         const inpt=document.querySelector(".inpt");
         const val=Number(inpt.value);
+
+        if(!val){
+            result.textContent="Please enter a number first";
+            return;
+        }
         
        
-        if(val ==random){
-          my_value.textContent+=val;
+        if(val ===random){
+          my_value.textContent=`Your value is ${val}`;
           result.textContent="** Congratulattionss You are correct **";
 
         }else{
