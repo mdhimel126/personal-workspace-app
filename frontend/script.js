@@ -1,6 +1,7 @@
 const btn1=document.querySelector("#tracking");
 const dropBtn=document.querySelector("#droping");
 const aboutBtn=document.querySelector("#about");
+const gameBtn=document.querySelector("#game");
 
 
 btn1.addEventListener("click",()=>{
@@ -13,6 +14,10 @@ dropBtn.addEventListener("click",()=>{
 
 aboutBtn.addEventListener("click",()=>{
     window.location.href="about.html";
+});
+
+gameBtn.addEventListener("click",()=>{
+    window.location.href="game.html";
 })
 
 const menu=document.querySelector(".contact-menu");
