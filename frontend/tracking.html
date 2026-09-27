@@ -4,73 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/tracking.css">
 
-    <style>
-        *{
-            color:white;
-        }
-        body {
-            background-color: #0b0f17;
-            background-image: 
-            radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-            radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
-            min-height: 100vh;
-        }
-       h1{
-            text-align: center;
-            color:blueviolet
-        }
-        #date,#remark{
-            color:black;
-        }
-       
-        label{
-            display:block;
-            margin-bottom: 15px;
-            text-align:center;
-            width:100%;
-            font-weight:bold;
-            font-size:24px;
-            color:antiquewhite;
-        }
-       
-
-        #parent-div{
-            display:flex;
-            height:600px;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 60px;
-            gap:40px
-            
-        }
-        #btn{
-            text-align:end;
-            
-        }
-          #back-btn{
-            padding: 8px 24px;
-            color:white;
-            background: linear-gradient(135deg, #4344a1, #8b5cf6);
-            border:none;
-            border-radius:6px
-        }
-        #back-btn:hover{
-    
-            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
-         }
-        #trac-save{
-            padding: 8px 24px;
-            color:white;
-            background: linear-gradient(135deg, #4344a1, #8b5cf6);
-            border:none;
-            border-radius:6px
-        }
-        #trac-save:hover{
-    
-            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
-         }
-    </style>
 </head>
 <body>
 
@@ -118,66 +53,6 @@
         </div>
     </div>
 
-    <script>
-        const trac_save=document.querySelector("#trac-save");
-
-        trac_save.addEventListener("click",()=>{
-
-            const morningHour=document.querySelector("input[name='morning']:checked");
-            const afternoonHour=document.querySelector("input[name='afternoon']:checked");
-            const nightHour=document.querySelector("input[name='night']:checked");
-
-            const dateInput=document.querySelector("#date");
-            const currentDate=dateInput.value;
-
-            const remarkInput=document.querySelector("#remark");
-            const remark=remarkInput.value;
-            
-
-            if(!morningHour || !afternoonHour || !nightHour || !currentDate){
-                alery("Please select all feild");
-                return;
-            }
-
-            const valueOfMorning=Number(morningHour.value);
-            const valueOfAfternoon=Number(afternoonHour.value);
-            const valueOfNight=Number(nightHour.value);
-            const totalValue=(valueOfMorning+valueOfAfternoon+valueOfNight);
-
-
-            const routine={
-            date:currentDate,  
-            remark:remark,  
-            morning:valueOfMorning,
-            afternoon:valueOfAfternoon,
-            night:valueOfNight,
-            total:totalValue
-           };
-
-            fetch("https://personal-workspace-app-1.onrender.com/api/routines", {           
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify(routine)
-
-           })
-           .then(res => res.json())
-           .then (data =>{
-            console.log(data);
-            alert("Routine Saved Successfully");
-           })
-           .catch(error=>{
-            console.log(error);
-           })
-       
-
-
-
-        });
-
-     
-
-    </script>
+    <script src="./src/tracking.js"> </script>
 </body>
 </html>

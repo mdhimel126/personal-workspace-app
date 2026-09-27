@@ -4,71 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-        background-color: #0b0f17;
-        background-image: 
-            radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-            radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
-            min-height: 100vh;
-       }
-        h1,h3{
-            text-align: center;
-        }
-        h1{
-            /* color:rgb(16, 230, 16); */
-            color:rgb(44, 170, 170)
-        }
-        h3{
-            color:rgb(127, 213, 213)
-            
-        }
-         #btn{
-            text-align:end;
-            
-        }
-          #back-btn{
-            padding: 8px 24px;
-            color:white;
-            background: linear-gradient(135deg, #4344a1, #8b5cf6);
-            border:none;
-            border-radius:6px
-        }
-        #back-btn:hover{
-    
-            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
-         }
-        .parent-div{
-            display:flex;
-            flex-direction:column;
-            justify-content: space-evenly;
-            align-items: center;
-            margin-top:30px ;
-            gap:30px
-        }
-        .playing-div{
-            height:200px;
-        }
-        p{
-            color:rgb(127, 213, 213);
-            font-weight:bold;
-        }
-        input{
-            outline:none;
-            padding: 5px;
-            border-radius: 5px;
-        }
-        button{
-                padding: 6px 10px;
-                color:white;
-                background: linear-gradient(135deg, #4344a1, #8b5cf6);
-                border:none;
-                border-radius:6px
-        }
-        button:hover{
-             box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
-        }
-    </style>
+    <link rel="stylesheet" href="./css/game.css">
+  
 </head>
 <body>
     <h1>Let's play a Game</h1>
@@ -98,48 +35,6 @@
     </div>
 
 
-    <script>
-    
-       const random=Math.floor(Math.random()*10)+1;
-
-       const btn=document.querySelector(".btn");
-       const my_value=document.querySelector(".my-value");
-       const result=document.querySelector(".result");
-       const anss_btn=document.querySelector(".anss-btn")
-       const show_result=document.querySelector(".show-result");
-
-
-       anss_btn.addEventListener("click",()=>{
-         show_result.textContent=`The Random value is ${random}`
-       })
-
-
-       btn.addEventListener("click",()=>{
-        
-        const inpt=document.querySelector(".inpt");
-        const val=Number(inpt.value);
-
-        if(!val){
-            result.textContent="Please enter a number first";
-            return;
-        }
-        
-       
-        if(val ===random){
-          my_value.textContent=`Your value is ${val}`;
-          result.textContent="** Congratulattionss You are correct **";
-
-        }else{
-            my_value.textContent=`Your value is ${val}`;
-            result.textContent="Try Again";
-            inpt.value="";
-        }
-    
-
-       });
-
-
-
-    </script>
+    <script src="./src/game.js"> </script>
 </body>
 </html>

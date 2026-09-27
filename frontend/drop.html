@@ -4,71 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
- <style>
-        *{
-            color:white;
-        }
-      body {
-        background-color: #0b0f17;
-        background-image: 
-            radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-            radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
-            min-height: 100vh;
-       }
-       h1{
-            text-align: center;
-            color:blueviolet
-        }
-        #btn{
-            text-align:end;
-            
-        }
-          #back-btn{
-            padding: 8px 24px;
-            color:white;
-            background: linear-gradient(135deg, #4344a1, #8b5cf6);
-            border:none;
-            border-radius:6px
-        }
-        #back-btn:hover{
-    
-            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
-         }
-         .main-div{
-            margin-top:60px;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            flex-direction:column;
-            gap:25px;
-         }
-         .main-div p{
-            font-size:22px;
-            font-weight:600;
-         }
-         .main-div input{
-            margin-left:38px;
-         }
-        #drop-text{
-            background-color: #02053a;
-            width:220px;
-        } 
-
-        #drop-save{
-            padding: 8px 24px;
-            color:white;
-            background: linear-gradient(135deg, #4344a1, #8b5cf6);
-            border:none;
-            border-radius:6px
-        }
-        #drop-save:hover{
-    
-            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
-         }
-         
-       
-    </style>
+    <link rel="stylesheet" href="./css/drop.css">
 
 </head>
 <body>
@@ -89,57 +25,7 @@
     </div>
 
 
-    <script>
-      const drop_save=document.querySelector("#drop-save");
-      const drop_file=document.querySelector("#drop-file");
-      const drop_text=document.querySelector("#drop-text");
-
-      drop_save.addEventListener("click",async ()=>{
-        const file=drop_file.files[0];
-        const text=drop_text.value;
-       
-        if(!file && !text){
-            alert("Select at least file or text");
-            return;
-        }
-
-
-        const formData=new FormData();
-
-        if(file){
-        formData.append("file",file);
-        }
-        if(text){
-            formData.append("text",text);
-        }
-
-        try{
-
-        const response=await fetch("https://personal-workspace-app-1.onrender.com/api/upload",{
-            method:"POST",
-            body:formData
-        });
-        
-        const data=await response.json();
-
-        if(response.ok){
-            alert(data.message || "upload successfully");
-            drop_file.value="";
-            drop_text.value="";
-
-        }else{
-            alert("Upload failed"+(data.message || "Unknown error"))
-        }
-      
-
-        
-    }catch(error){
-        console.log(error);
-        alert("Something went wrong");
-    }
-});
-    
-    </script>
+    <script src="./src/drop.js"></script>
     
 </body>
 </html>
