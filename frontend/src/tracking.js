@@ -6,21 +6,24 @@
             const afternoonHour=document.querySelector("input[name='afternoon']:checked");
             const nightHour=document.querySelector("input[name='night']:checked");
 
+            const morningHalf=document.querySelector("#morning-half");
+            const afternoonHalf=document.querySelector("#afternoon-half");
+            const nightHalf=document.querySelector("#night-half");
+
             const dateInput=document.querySelector("#date");
             const currentDate=dateInput.value;
 
             const remarkInput=document.querySelector("#remark");
             const remark=remarkInput.value;
             
-
-            if(!morningHour || !afternoonHour || !nightHour || !currentDate){
-                alery("Please select all feild");
-                return;
+            if(!currentDate){
+                alert("please give a current date");
             }
 
-            const valueOfMorning=Number(morningHour.value);
-            const valueOfAfternoon=Number(afternoonHour.value);
-            const valueOfNight=Number(nightHour.value);
+
+            const valueOfMorning=(morningHour?Number(morningHour.value):0)+(morningHalf.checked?0.5:0);
+            const valueOfAfternoon=(afternoonHour?Number(afternoonHour.value):0)+(afternoonHalf.checked?0.5:0);
+            const valueOfNight=(nightHour?Number(nightHour.value):0)+(nightHalf.checked?0.5:0);
             const totalValue=(valueOfMorning+valueOfAfternoon+valueOfNight);
 
 
