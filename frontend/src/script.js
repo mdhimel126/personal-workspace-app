@@ -2,6 +2,7 @@ const btn1=document.querySelector("#tracking");
 const dropBtn=document.querySelector("#droping");
 const aboutBtn=document.querySelector("#about");
 const gameBtn=document.querySelector("#game");
+const notepadBtn=document.querySelector("#notepad");
 
 
 btn1.addEventListener("click",()=>{
@@ -18,7 +19,11 @@ aboutBtn.addEventListener("click",()=>{
 
 gameBtn.addEventListener("click",()=>{
     window.location.href="game.html";
-})
+});
+
+notepadBtn.addEventListener("click",()=>{
+    window.location.href="notepad.html";
+});
 
 const menu=document.querySelector(".contact-menu");
 const msgBtn=document.querySelector("#message-icon");
