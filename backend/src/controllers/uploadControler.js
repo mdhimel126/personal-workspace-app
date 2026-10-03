@@ -1,7 +1,7 @@
 
 import Upload from "../models/upload.js";
 
-const uploadFile=async(req,res,next)=>{
+export const uploadFile=async(req,res,next)=>{
 
     try{
 
@@ -46,4 +46,25 @@ const uploadFile=async(req,res,next)=>{
 
 };
 
-export default uploadFile;
+export const getTextUploads=async(req,res)=>{
+    try{
+
+        const textData= await Upload.find(
+            {text:{ $ne: null}},"text category createdAt"
+        ).sort({createdAt:-1});
+
+        return res.status(200).json({
+            success:true,
+            count:textData.length,
+            data:textData
+        });
+    }catch(error){
+        return res.status(500).json({
+            success:false,
+            message:"sorry facing some problem to fetch data",
+            error:error.message
+        });
+
+    }
+};
+
